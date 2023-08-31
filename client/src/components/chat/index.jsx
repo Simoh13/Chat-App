@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useMultiChatLogic,MultiChatSocket,MultiChatWindow } from "react-chat-engine-advanced"
 import Header from "@/components/customHeader"
-import StandardMessageForm from "@/components/customMess&ageForms/StandardMessageForm"
+import StandardMessageForm from "@/components/customMessageForms/StandardMessageForm"
 
 
 const Chat = () => {
