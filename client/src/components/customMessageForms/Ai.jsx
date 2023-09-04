@@ -1,14 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { PaperAirplaneIcon, PaperClipIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import React, { useState } from 'react'
-import Dropzone from 'react-dropzone'
 import MessageFormUi from './MessageFormUi'
+import { usePostAiTextMutation } from '@/state/api'
 
-const StandardMessageForm = ({props,activeChat}) => {
-  const [message,setMessage] = useState("")
+const Ai = ({props,activeChat}) => {
+    const [message,setMessage] = useState("")
   const [attachment,setAttachment] = useState("")
-  const [preview,setPreview] = useState("")
+  const [trigger] = usePostAiTextMutation()
 
   const handleChange = (e) => setMessage(e.target.value)
 
@@ -23,10 +22,10 @@ const StandardMessageForm = ({props,activeChat}) => {
       activeChatId:activeChat.id,
     }
     props.onSubmit(form);
+    trigger(form)
     setMessage("")
     setAttachment("")
   }
-
   return (
     <MessageFormUi 
     setAttachment={setAttachment}
@@ -37,4 +36,4 @@ const StandardMessageForm = ({props,activeChat}) => {
   )
 }
 
-export default StandardMessageForm
+export default Ai

@@ -9,7 +9,7 @@ const Header = ({chat}) => {
         <div className='flexbetween'>
             <ChatBubbleLeftRightIcon className="icon-chat"/>
             <h3 className='header-text'>{chat.title}</h3>
-        </div>
+        </div>       
         <div className='flexbetween'>
             <PhoneIcon className='icon-phone' />
             <p className='header-text'>{chat.description}</p>
